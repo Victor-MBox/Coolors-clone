@@ -1,0 +1,3 @@
+# Игнорировать файлы .DS_Store и .AppleDouble во всех каталогах
+.DS_Store
+.AppleDouble
