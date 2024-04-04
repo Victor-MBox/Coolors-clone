@@ -97,9 +97,35 @@ body {
 }
 
 .modal__info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.modal__info i{
     display: inline-block;
     margin: 0 auto;
     border-radius: 90px;
-    padding: 20px;
+    padding: 14px 20px;
     border: 2px solid #fff;
+}
+
+.modal__list {
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.modal__list span{
+    background: #0076d7;
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+    padding: 0 4px;
+}
+
+.modal__img img{
+    width: 50%;
+}
+
+.modal__img  {
+    text-align: center;
 }
