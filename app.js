@@ -7,6 +7,12 @@ document.addEventListener('keydown', event => {
 		// Если да, вызываем функцию установки случайных цветов
 		setRandomColors()
 	}
+
+	// Проверяем, является ли нажатая клавиша `Esc`
+	if (event.code.toLowerCase() === 'escape') {
+		// Если да, то закрываем модальное окно
+		closeModal()
+	}
 })
 
 document.addEventListener('click', event => {
@@ -118,3 +124,38 @@ function getColorsFromHash() {
 
 // Вызываем функцию установки случайных цветов при загрузке страницы
 setRandomColors(true)
+
+
+// Модальное окно. Автоматически показывать и скрыть по клику на кнопку, оверлей и Esc
+const modal = document.querySelector('.modal'),
+	overlap = document.querySelector('.overlap'),
+	modalClose = document.querySelector('.modal__close'),
+	infoBtn = document.querySelector('.info')
+
+function openModal() {
+	overlap.classList.add('overlap__active')
+}
+
+function closeModal() {
+	overlap.classList.remove('overlap__active')
+}
+
+window.onload = function () {
+	setTimeout(function () {
+		openModal()
+	}, 2000) 
+}
+
+infoBtn.addEventListener('click', () => {
+	openModal()
+})
+
+modalClose.addEventListener('click', () => {
+	closeModal()
+})
+
+overlap.addEventListener('click', event => {
+	if (event.target === overlap) {
+		closeModal()
+	}
+})

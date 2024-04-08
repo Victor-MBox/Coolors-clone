@@ -51,6 +51,10 @@ body {
 }
 
 .overlap {
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -60,6 +64,8 @@ body {
 }
 
 .modal {
+    margin-top: 0px;
+    transition: .4s;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -96,12 +102,31 @@ body {
     transform: rotate(-45deg);
 }
 
-.modal__info {
+.modal__info{
     text-align: center;
     margin-bottom: 40px;
 }
 
-.modal__info i{
+.info {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+
+.info i {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 90px;
+    padding: 14px 20px;
+    border: 2px solid #202020;
+
+    cursor: pointer;
+}
+
+.modal__info i {
     display: inline-block;
     margin: 0 auto;
     border-radius: 90px;
@@ -115,17 +140,28 @@ body {
     line-height: 1.4;
 }
 
-.modal__list span{
+.modal__list span {
     background: #0076d7;
     border-radius: 2px;
     color: rgb(255, 255, 255);
     padding: 0 4px;
 }
 
-.modal__img img{
+.modal__img img {
     width: 50%;
 }
 
-.modal__img  {
+.modal__img {
     text-align: center;
+}
+
+
+.overlap__active {
+    visibility: inherit;
+    opacity: 1;
+}
+
+.overlap__active .modal {
+    margin-top: -30px;
+    transition: .4s;
 }
