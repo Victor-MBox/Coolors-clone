@@ -165,3 +165,68 @@ body {
     margin-top: -30px;
     transition: .4s;
 }
+
+.small-modal {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+
+    border-radius: 10px;
+    padding: 30px 70px;
+    background: #202020;
+
+    color: #fff;
+    font-size: 16px;
+    
+    overflow: hidden;
+    
+    transition: .3s;
+}
+
+.small-modal_active {
+    visibility: inherit;
+    opacity: 1;
+    left: 20px
+}
+
+.small-modal i {
+    margin-right: 10px;
+}
+
+.small-modal__progress {
+    width: 100%;
+    height: 6px;
+    background: #0076d7;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    animation: shrinkWidth 2s forwards;
+}
+
+@keyframes shrinkWidth {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0;
+    }
+}
+
+
+@media (max-width: 1025px) {
+    .modal {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal__list, .modal__img {
+        text-align: left;
+    }
+}

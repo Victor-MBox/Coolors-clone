@@ -125,37 +125,64 @@ function getColorsFromHash() {
 // Вызываем функцию установки случайных цветов при загрузке страницы
 setRandomColors(true)
 
-
 // Модальное окно. Автоматически показывать и скрыть по клику на кнопку, оверлей и Esc
 const modal = document.querySelector('.modal'),
 	overlap = document.querySelector('.overlap'),
 	modalClose = document.querySelector('.modal__close'),
 	infoBtn = document.querySelector('.info')
 
+// Открытие модального окна
 function openModal() {
 	overlap.classList.add('overlap__active')
 }
 
+// Закрытие модального окна
 function closeModal() {
 	overlap.classList.remove('overlap__active')
 }
 
+// Открытие мод окна через 2 сек
 window.onload = function () {
 	setTimeout(function () {
 		openModal()
-	}, 2000) 
+	}, 2000)
 }
 
+// Открытие модального окна по "i"
 infoBtn.addEventListener('click', () => {
 	openModal()
 })
 
+// Закрытие модального окна по клику на Х
 modalClose.addEventListener('click', () => {
 	closeModal()
 })
 
+// Закрытие модального окна по клику на оверлей
 overlap.addEventListener('click', event => {
 	if (event.target === overlap) {
 		closeModal()
 	}
 })
+
+// Всплывающее окно "Цвет скопирован"
+const colorBtns = document.querySelectorAll('h2'),
+	smallModal = document.querySelector('.small-modal'),
+	smallModalProgress = smallModal.querySelector('.small-modal__progress')
+
+for (colorBtn of colorBtns) {
+	colorBtn.addEventListener('click', () => {
+		smallModal.classList.add('small-modal_active')
+
+		// Сбрасываем анимацию, удаляя и добавляя стиль, чтобы анимация сработала заново
+		smallModalProgress.style.animation = 'none'
+		// Вызываем reflow, заставляя браузер пересчитать стили
+		smallModalProgress.offsetHeight // чтение offsetHeight заставляет браузер выполнить reflow
+		// Заново устанавливаем анимацию
+		smallModalProgress.style.animation = 'shrinkWidth 3s forwards'
+
+		setTimeout(() => {
+			smallModal.classList.remove('small-modal_active')
+		}, 2200)
+	})
+}
