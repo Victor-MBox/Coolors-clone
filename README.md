@@ -24,4 +24,4 @@ Coolours — это интерактивное веб-приложение дл�
 
 ## Скриншоты
 
-![Главный экран Coolours](https://disk.yandex.ru/i/o2gDej7JhqlVyg)
+![Главный экран Coolours]([https://disk.yandex.ru/i/o2gDej7JhqlVyg](https://disk.yandex.ru/i/o2gDej7JhqlVyg))
